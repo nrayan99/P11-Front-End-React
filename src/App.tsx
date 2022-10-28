@@ -8,14 +8,12 @@ function App() {
   const [logements, setLogements] = useState([] as logementHomeFormatted[]);
 
   useEffect(() => {
+    async function apiCall(): Promise<logement[]> {
+      return logementJson
+    }
     async function getLogements() {
-      const logements = await Promise.all(
-        logementJson.map(async (logement: logement) =>
-          formatLogementForHome(logement)
-        )
-      );
-      console.log(logements);
-      setLogements(logements);
+      const logements = await apiCall();
+      setLogements(logements.map((logement: logement) => formatLogementForHome(logement)));
     }
     getLogements();
   }, []);
