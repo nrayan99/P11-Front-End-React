@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+import { useEffect, useState } from "react";
 import "./App.css";
-import Banner from "./components/Banner/Banner";
 import { formatLogementForHome } from "./formatter/Logement";
 import logementJson from "./data/logements.json";
 import type { logement, logementHomeFormatted } from "./formatter/Logement";

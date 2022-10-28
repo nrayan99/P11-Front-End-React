@@ -15,9 +15,10 @@ export type logement = {
 };
 export type logementHomeFormatted = {
   title: string;
+  cover: string;
 };
 export const formatLogementForHome = (
   logement: logement
 ): logementHomeFormatted => {
-  return { title: logement.title };
+  return { title: logement.title, cover: logement.cover };
 };
