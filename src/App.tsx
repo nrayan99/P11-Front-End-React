@@ -9,11 +9,13 @@ function App() {
 
   useEffect(() => {
     async function apiCall(): Promise<logement[]> {
-      return logementJson
+      return logementJson;
     }
     async function getLogements() {
       const logements = await apiCall();
-      setLogements(logements.map((logement: logement) => formatLogementForHome(logement)));
+      setLogements(
+        logements.map((logement: logement) => formatLogementForHome(logement))
+      );
     }
     getLogements();
   }, []);
