@@ -13,3 +13,7 @@ export type logement = {
   equipments: string[];
   tags: string[];
 };
+export type logementHomeFormatted = {
+  title: string;
+  cover: string;
+};

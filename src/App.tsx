@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { formatLogementForHome } from "./formatter/Logement";
 import logementJson from "./data/logements.json";
-import type { logement } from "./types/logement";
-import type { logementHomeFormatted } from "./types/logementHomeFormatted";
+import type { logement, logementHomeFormatted } from "./types/logement";
 
 function App() {
   const [logements, setLogements] = useState([] as logementHomeFormatted[]);

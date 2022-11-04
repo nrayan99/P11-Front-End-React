@@ -1,0 +1,41 @@
+.Header {
+  padding: 40px 100px 0px 100px;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 210.32px;
+    height: 68px;
+  }
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+    gap: 57px;
+    li {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 34px;
+      a {
+        text-decoration: none;
+        color: #ff6060;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 20px 20px 0px 20px;
+    img {
+        width: 145px;
+        height: 47px;
+    }
+    ul {
+      gap: 15px;
+
+      li {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 17px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
