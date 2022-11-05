@@ -1,0 +1,39 @@
+.NotFound {
+  color: #ff6060;
+  text-align: center;
+  padding: 100px 0px;
+  h1 {
+    font-size: 288px;
+    font-weight: 700;
+    line-height: 411px;
+    margin: 0;
+  }
+  h4 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 51px;
+  }
+  a {
+    color: #ff6060;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+  }
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 96px;
+      font-weight: 700;
+      line-height: 137px;
+    }
+    h4 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 26px;
+    }
+    a {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+  }
+}
