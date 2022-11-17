@@ -5,13 +5,13 @@ import { useState } from "react";
 type Props = {
   title: string;
   content: string | string[];
+  children: React.ReactNode;
 };
 
-function Dropdown({ title, content }: Props) {
+function Dropdown({ title, content, children }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const isAList = Array.isArray(content);
 
-  console.log(isAList);
   return (
     <div className={style.Dropdown}>
       <div className={style.Dropdown__title}>
