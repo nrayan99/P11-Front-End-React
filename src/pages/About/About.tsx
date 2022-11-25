@@ -35,12 +35,7 @@ function About() {
       </div>
       <div className={style.About_Dropdowns_container}>
         {aboutContent.map((item, index) => (
-          <Dropdown
-            key={index}
-            title={item.title}
-            content={item.content}
-          >
-          </Dropdown>
+          <Dropdown key={index} title={item.title} content={item.content} />
         ))}
       </div>
     </div>

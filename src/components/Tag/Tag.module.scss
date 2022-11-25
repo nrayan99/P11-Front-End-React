@@ -1,0 +1,14 @@
+.Tag {
+  background: #ff6060;
+  border-radius: 10px;
+  padding: 3px 22px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  width: fit-content;
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}

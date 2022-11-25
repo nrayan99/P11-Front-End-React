@@ -5,10 +5,9 @@ import { useState } from "react";
 type Props = {
   title: string;
   content: string | string[];
-  children: React.ReactNode;
 };
 
-function Dropdown({ title, content, children }: Props) {
+function Dropdown({ title, content }: Props) {
   const [isOpen, setIsOpen] = useState(false);
   const isAList = Array.isArray(content);
 

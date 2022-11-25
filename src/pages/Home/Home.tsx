@@ -5,6 +5,7 @@ import logementJson from "../../data/logements.json";
 import type { logement, logementHomeFormatted } from "../../types/logement";
 import Thumb from "../../components/Thumb/Thumb";
 import bannerImg from "../../assets/images/home-banner.png";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [logements, setLogements] = useState([] as logementHomeFormatted[]);
@@ -30,7 +31,11 @@ function Home() {
       </div>
       <div className="logement-container">
         {logements.map((logement, index) => {
-          return <Thumb cover={logement.cover} title={logement.title} />;
+          return (
+            <Link key={logement.id} to={`/logement/${logement.id}`}>
+              <Thumb cover={logement.cover} title={logement.title} />
+            </Link>
+          );
         })}
       </div>
     </div>

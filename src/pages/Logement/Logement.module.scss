@@ -1,0 +1,124 @@
+.Logement {
+  justify-self: flex-start;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+.descriptionContainer {
+  display: flex;
+  margin-top: 20px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.colContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    &:nth-child(1) {
+      margin-bottom: 16px;
+    }
+  }
+  &:nth-child(2) {
+    align-items: flex-end;
+    @media screen and (max-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+//Left part
+.title {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 51px;
+  color: #ff6060;
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 5px;
+  }
+}
+.location {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  text-align: left;
+  color: #ff6060;
+  margin-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+}
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+//right part
+.hostDescription {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 0;
+  }
+  order: 2;
+  h3 {
+    color: #ff6060;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: right;
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 17px;
+    }
+  }
+  img {
+    margin-left: 10px;
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+    @media screen and (max-width: 768px) {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}
+.rating {
+  display: flex;
+  gap: 10px;
+  > img {
+    @media screen and (max-width: 768px) {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+// Accordions part
+
+.accordionsContainer {
+  margin-top: 26px;
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 76px;
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      row-gap: 20px;
+    }
+    > div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

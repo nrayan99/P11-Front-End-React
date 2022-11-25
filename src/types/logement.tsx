@@ -14,6 +14,7 @@ export type logement = {
   tags: string[];
 };
 export type logementHomeFormatted = {
+  id: string;
   title: string;
   cover: string;
 };
