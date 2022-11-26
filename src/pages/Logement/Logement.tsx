@@ -8,11 +8,12 @@ import starEmptyIcon from "../../assets/icons/star-empty.svg";
 import starFull from "../../assets/icons/star-full.svg";
 import Tag from "../../components/Tag/Tag";
 import Dropdown from "../../components/Dropdown/Dropdown";
+import { useNavigate } from "react-router-dom";
 
 function Logement() {
   const { id } = useParams();
+  let navigate = useNavigate();
   const [logement, setLogement] = useState(undefined as logement | undefined);
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -23,26 +24,31 @@ function Logement() {
     }
     async function getLogementById(id: string | undefined): Promise<void> {
       const logements = await apiCall();
-      console.log(logements);
+      const logement = logements.find((logement) => logement.id === id);
+      if (logement) {
+        setLogement(logement);
+      } else {
+        navigate("/404");
+      }
       setLogement(logements.find((logement) => logement.id === id));
     }
     getLogementById(id);
-  }, [id]);
+  }, [navigate, id]);
 
   function getRatingStars(rating: number): JSX.Element[] {
     const stars = [];
     for (let i = 0; i < 5; i++) {
       if (i < rating) {
-        stars.push(<img src={starFull} alt="star" />);
+        stars.push(<img key={i} src={starFull} alt="star" />);
       } else {
-        stars.push(<img src={starEmptyIcon} alt="star" />);
+        stars.push(<img key={i} src={starEmptyIcon} alt="star" />);
       }
     }
     return stars;
   }
 
   if (logement === undefined) {
-    return <div>Logement not found</div>;
+    return <div className={style.Logement}>Logement not found</div>;
   } else {
     return (
       <div className={style.Logement}>
@@ -52,18 +58,18 @@ function Logement() {
             <h1 className={style.title}>{logement.title}</h1>
             <p className={style.location}>{logement.location}</p>
             <div className={style.tags}>
-              {logement.tags.map((tag) => (
-                <Tag tag_name={tag} />
+              {logement.tags.map((tag, index) => (
+                <Tag key={index} tag_name={tag} />
               ))}
             </div>
           </div>
           <div className={style.colContainer}>
             <div className={style.hostDescription}>
               <h3>
-                {logement.host.name.split(" ").map((x) => (
-                  <>
+                {logement.host.name.split(" ").map((x, index) => (
+                  <div key={index}>
                     {x} <br></br>
-                  </>
+                  </div>
                 ))}
               </h3>
               <img src={logement.host.picture} alt="host" />
@@ -75,8 +81,8 @@ function Logement() {
         </div>
         <div className={style.accordionsContainer}>
           <div className={style.accordion}>
-            <Dropdown title="Description" content={logement.description} />
-            <Dropdown title="Équipements" content={logement.equipments} />
+            <Dropdown key={'description'} title="Description" content={logement.description} />
+            <Dropdown key={'equipement'} title="Équipements" content={logement.equipments} />
           </div>
         </div>
       </div>

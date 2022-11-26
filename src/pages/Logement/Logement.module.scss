@@ -67,8 +67,8 @@
   margin-bottom: 24px;
   @media screen and (max-width: 768px) {
     margin-bottom: 0;
+    order: 2;
   }
-  order: 2;
   h3 {
     color: #ff6060;
     font-size: 18px;
